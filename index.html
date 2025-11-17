@@ -57,5 +57,36 @@
 
         <label>Correo electrónico:</label>
         <input type="email" id="correo" required>
+         
+        <label>Tipo de financiamiento:</label>
+        <label><input type="radio" name="tipo" value="Contado"> Contado</label>
+        <label><input type="radio" name="tipo" value="Crédito"> Crédito</label>
+
+           <p><strong>Extras:</strong></p>
+        <label><input type="checkbox" value="Aire Acondicionado"> Aire Acondicionado</label><br>
+        <label><input type="checkbox" value="GPS"> GPS</label><br>
+        <label><input type="checkbox" value="Incluir Seguro"> Incluir Seguro</label><br>
+        <label><input type="checkbox" value="Quemacocos"> Quemacocos</label><br>
+        <label><input type="checkbox" value="Camara trasera"> Cámara trasera</label><br>
+        <label><input type="checkbox" value="Camara frontal"> Cámara frontal</label><br>
+
+          <p><strong>Selecciona la marca:</strong></p>
+        <select id="marca">
+            <option>HONDA</option>
+            <option>NISSAN</option>
+            <option>TOYOTA</option>
+            <option>MAZDA</option>
+            <option>HYUNDAI</option>
+            <option>KIA</option>
+            <option>MITSUBISHI</option>
+            <option>SUZUKI</option>
+        </select>
+
+        
+        <button type="button" onclick="mostrarCotizacion()">Enviar cotización</button>
+    </form>
+
+    <!-- RESULTADO -->
+    <div id="resultado"></div>
 </body>
 </html>

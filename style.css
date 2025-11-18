@@ -116,3 +116,43 @@ form select {
     margin-bottom: 10px;
     padding: 8px;
 }
+.card {
+    background: #be0000;
+    color: #fff700;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    border-radius: 0;
+}
+
+/* Logo */
+.card .logo {
+    max-width: 130px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+/* Imagen del auto */
+.card .car {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Texto */
+.brand-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card a {
+    color: #fff700;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: bold;
+}

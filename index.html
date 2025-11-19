@@ -1,165 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agencia de Autos Asiáticos</title>
+  <style>
+:root {
+  --blue-dark: #002f6c;
+  --blue-mid: #003a78;
+  --light-blue: #4a8ed1;
+  --red: #c40000;
+  --card-red: #be0000;
+  --yellow: #fff700;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --gap: 12px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*ESTRUCTURA GENERAL*/
+
+body {
+  margin: 0;
+  background: #e6e6e6;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--white);
+  box-sizing: border-box;
+}
+
+/*ENCABEZADOS*/
+
+.header {
+  background: var(--blue-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 12px 8px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.decor-line {
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--red) 0 33%,
+    var(--white) 33% 66%,
+    var(--red) 66% 100%
+  );
+}
+
+.title-section {
+  background: var(--blue-mid);
+  color: var(--white);
+  text-align: center;
+  padding: 28px 12px;
+  font-size: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/*FILA PRINCIPAL*/
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: var(--gap);
+  padding: 18px 24px;
+  align-items: center;
+}
+
+.col {
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 18px;
+  box-sizing: border-box;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--yellow);
+  background: var(--light-blue);
+}
+
+/*MARQUESINA*/
+
+.marquee {
+  background: var(--red);
+  color: var(--white);
+  font-weight: 800;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+}
+
+.marquee strong {
+  background: var(--yellow);
+  color: var(--red);
+  padding: 6px 8px;
+  margin-right: 10px;
+  font-weight: 900;
+}
+
+
+/*CATÁLOGO*/
+.catalog-grid {
+  padding: 14px 24px;
+  background: var(--white);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.card {
+  background: var(--card-red);
+  color: var(--yellow);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  box-sizing: border-box;
+  height: 160px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.card .logo {
+  max-width: 140px;
+  max-height: 56px;
+  object-fit: contain;
+}
+
+.card .car {
+  width: 100%;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.brand-name {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--yellow);
+}
+
+.card a {
+  color: var(--yellow);
+  text-decoration: underline;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* FORMULARIO  */
+
+.cot-section {
+  padding: 18px 24px 40px 24px;
+}
+
+form {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form input,
+form select {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.btn {
+  background: var(--blue-dark);
+  color: var(--white);
+  border: none;
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+/*RESULTADO  */
+
+#resultado {
+  max-width: 720px;
+  margin: 12px auto;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  display: none;
+}
+
+  </style>
 </head>
 <body>
+  <div class="page">
     <div class="header">Pagina creada en mi curso de IDAI</div>
-
-    <div class="title-section">
-        AGENCIA DE AUTOS ASIATICOS
-    </div>
-
+    <div class="decor-line"></div>
+    <div class="title-section">AGENCIA DE AUTOS ASIATICOS</div>
     <div class="decor-line"></div>
 
-    <!-- FILA PRINCIPAL -->
     <div class="row">
+      <div class="col" id="videoBox">VIDEO DE LA AGENCIA</div>
 
-        <div class="col blue-box">
-            VIDEO DE LA AGENCIA
-        </div>
+      <div class="marquee">
+        <strong>MARQUESINA:</strong>
+        AUTOS PERSONALES, DEPORTIVOS Y DE LUJO, SUVS Y MINIVANS, PICKUPS Y COMERCIALES, HÍBRIDOS
+      </div>
 
-        <div class="col red-box">
-            <strong>MARQUESINA:</strong>
-            AUTOS PERSONALES, DEPORTIVOS Y DE LUJO, SUVS Y MINIVANS,
-            PICKUPS Y COMERCIALES, HÍBRIDOS
-        </div>
-           <div class="col blue-box">
-            MAPA DE LOCALIZACIÓN
-        </div>
-
+      <div class="col" id="mapBox">MAPA DE LOCALIZACIÓN</div>
     </div>
 
-   <h2 class="catalog-title">Catálogo de Marcas</h2>
+    <h2 style="margin:18px 24px 6px 24px; color:#111; font-size:20px">Catálogo de Marcas</h2>
 
-<div class="catalog-grid">
+    <div class="catalog-grid">
+      <!-- tarjetas -->
+      <div class="card">
+        <img class="logo" src="img/logohonda.jpg" alt="Logo Honda">
+        <img class="car"  src="img/autohonda.jpg" alt="Auto Honda">
+        <div class="brand-name">HONDA</div>
+        <a href="https://www.honda.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
 
-    <!-- HONDA -->
-    <div class="card">
-        <img class="logo" src="img/logohonda.png" alt="Honda logo">
-        <img class="car" src="img/autohonda.jpg" alt="Auto Honda">
-        <div class="brand-info">
-            <div class="brand-name">HONDA</div>
-            <a href="https://www.honda.com" target="_blank">Ficha oficial</a>
-        </div>
+      <div class="card">
+        <img class="logo" src="img/logonissan.jpg" alt="Logo Nissan">
+        <img class="car"  src="img/autonissan.jpeg" alt="Auto Nissan">
+        <div class="brand-name">NISSAN</div>
+        <a href="https://www.nissan.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
+
+      <div class="card">
+        <img class="logo" src="img/logotoyota.png" alt="Logo Toyota">
+        <img class="car"  src="img/autotoyota.png" alt="Auto Toyota">
+        <div class="brand-name">TOYOTA</div>
+        <a href="https://www.toyota.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
+
+      <div class="card">
+        <img class="logo" src="img/logomazda.png" alt="Logo Mazda">
+        <img class="car"  src="img/automazda.jpg" alt="Auto Mazda">
+        <div class="brand-name">MAZDA</div>
+        <a href="https://www.mazda.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
+
+      <div class="card">
+        <img class="logo" src="img/logohyundai.png" alt="Logo Hyundai">
+        <img class="car"  src="img/autohiunday.jpg" alt="Auto Hyundai">
+        <div class="brand-name">HYUNDAI</div>
+        <a href="https://www.hyundai.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
+
+      <div class="card">
+        <img class="logo" src="img/logokia.jpg" alt="Logo KIA">
+        <img class="car"  src="img/autokia.jpg" alt="Auto KIA">
+        <div class="brand-name">KIA</div>
+        <a href="https://www.kia.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
+
+      <div class="card">
+        <img class="logo" src="img/logomitsubishi.jpg" alt="Logo Mitsubishi">
+        <img class="car"  src="img/automitsubishi.jpg" alt="Auto Mitsubishi">
+        <div class="brand-name">MITSUBISHI</div>
+        <a href="https://www.mitsubishi-motors.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
+
+      <div class="card">
+        <img class="logo" src="img/logosuzuki.png" alt="Logo Suzuki">
+        <img class="car"  src="img/autosuzuki.jpg" alt="Auto Suzuki">
+        <div class="brand-name">SUZUKI</div>
+        <a href="https://www.suzuki.com" target="_blank" rel="noopener">Ficha oficial</a>
+      </div>
     </div>
 
-    <!-- NISSAN -->
-    <div class="card">
-        <img class="logo" src="img/logonissan.png" alt="Nissan logo">
-        <img class="car" src="img/autonissan.jpeg" alt="Auto Nissan">
-        <div class="brand-info">
-            <div class="brand-name">NISSAN</div>
-            <a href="https://www.nissan.com" target="_blank">Ficha oficial</a>
-        </div>
-    </div>
+    <div class="cot-section">
+      <h2 style="text-align:center; margin-top:6px;">Cotización de vehículos</h2>
 
-    <!-- TOYOTA -->
-    <div class="card">
-        <img class="logo" src="img/logotoyota.png" alt="Toyota logo">
-        <img class="car" src="img/autotoyota.png" alt="Auto Toyota">
-        <div class="brand-info">
-            <div class="brand-name">TOYOTA</div>
-            <a href="https://www.toyota.com" target="_blank">Ficha oficial</a>
-        </div>
-    </div>
-
-    <!-- MAZDA -->
-    <div class="card">
-        <img class="logo" src="img/logomazda.png" alt="Mazda logo">
-        <img class="car" src="img/automazda.jpg" alt="Auto Mazda">
-        <div class="brand-info">
-            <div class="brand-name">MAZDA</div>
-            <a href="https://www.mazda.com" target="_blank">Ficha oficial</a>
-        </div>
-    </div>
-
-    <!-- HYUNDAI -->
-    <div class="card">
-        <img class="logo" src="img/logohyundai.png" alt="Hyundai logo">
-        <img class="car" src="img/autohiunday.jpg" alt="Auto Hyundai">
-        <div class="brand-info">
-            <div class="brand-name">HYUNDAI</div>
-            <a href="https://www.hyundai.com" target="_blank">Ficha oficial</a>
-        </div>
-    </div>
-
-    <!-- KIA -->
-    <div class="card">
-        <img class="logo" src="img/logokia.png" alt="KIA logo">
-        <img class="car" src="img/autokia.jpg" alt="Auto KIA">
-        <div class="brand-info">
-            <div class="brand-name">KIA</div>
-            <a href="https://www.kia.com" target="_blank">Ficha oficial</a>
-        </div>
-    </div>
-
-    <!-- MITSUBISHI -->
-    <div class="card">
-        <img class="logo" src="img/logomitsubishi.jpg" alt="Mitsubishi logo">
-        <img class="car" src="img/automitsubishi.jpg" alt="Auto Mitsubishi">
-        <div class="brand-info">
-            <div class="brand-name">MITSUBISHI</div>
-            <a href="https://www.mitsubishi-motors.com" target="_blank">Ficha oficial</a>
-        </div>
-    </div>
-
-    <!-- SUZUKI -->
-    <div class="card">
-        <img class="logo" src="img/logosuzuki.png" alt="Suzuki logo">
-        <img class="car" src="img/autosuzuki.jpeg" alt="Auto Suzuki">
-        <div class="brand-info">
-            <div class="brand-name">SUZUKI</div>
-            <a href="https://www.suzuki.com" target="_blank">Ficha oficial</a>
-        </div>
-    </div>
-
-</div>
-
-
-    <!-- COTIZACIÓN -->
-    <h2 class="cot-title">Cotización de vehículos</h2>
-
-    <form id="cotizarForm">
-
+      <form id="cotizarForm">
         <label>Nombre completo:</label>
         <input type="text" id="nombre" required>
 
         <label>Correo electrónico:</label>
         <input type="email" id="correo" required>
-         
+
         <label>Tipo de financiamiento:</label>
-        <label><input type="radio" name="tipo" value="Contado"> Contado</label>
-        <label><input type="radio" name="tipo" value="Crédito"> Crédito</label>
+        <div style="display:flex;gap:12px;">
+          <label><input type="radio" name="tipo" value="Contado" checked> Contado</label>
+          <label><input type="radio" name="tipo" value="Crédito"> Crédito</label>
+        </div>
 
-           <p><strong>Extras:</strong></p>
-        <label><input type="checkbox" value="Aire Acondicionado"> Aire Acondicionado</label><br>
-        <label><input type="checkbox" value="GPS"> GPS</label><br>
-        <label><input type="checkbox" value="Incluir Seguro"> Incluir Seguro</label><br>
-        <label><input type="checkbox" value="Quemacocos"> Quemacocos</label><br>
-        <label><input type="checkbox" value="Camara trasera"> Cámara trasera</label><br>
-        <label><input type="checkbox" value="Camara frontal"> Cámara frontal</label><br>
+        <p><strong>Extras:</strong></p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <label><input type="checkbox" name="extras" value="Aire Acondicionado"> Aire Acondicionado</label>
+          <label><input type="checkbox" name="extras" value="GPS"> GPS</label>
+          <label><input type="checkbox" name="extras" value="Incluir Seguro"> Incluir Seguro</label>
+          <label><input type="checkbox" name="extras" value="Quemacocos"> Quemacocos</label>
+          <label><input type="checkbox" name="extras" value="Camara trasera"> Cámara trasera</label>
+          <label><input type="checkbox" name="extras" value="Camara frontal"> Cámara frontal</label>
+        </div>
 
-          <p><strong>Selecciona la marca:</strong></p>
+        <label>Selecciona la marca:</label>
         <select id="marca">
-            <option>HONDA</option>
-            <option>NISSAN</option>
-            <option>TOYOTA</option>
-            <option>MAZDA</option>
-            <option>HYUNDAI</option>
-            <option>KIA</option>
-            <option>MITSUBISHI</option>
-            <option>SUZUKI</option>
+          <option>HONDA</option>
+          <option>NISSAN</option>
+          <option>TOYOTA</option>
+          <option>MAZDA</option>
+          <option>HYUNDAI</option>
+          <option>KIA</option>
+          <option>MITSUBISHI</option>
+          <option>SUZUKI</option>
         </select>
 
-        
-        <button type="button" onclick="mostrarCotizacion()">Enviar cotización</button>
-    </form>
+        <button type="button" class="btn" onclick="mostrarCotizacion()">Enviar cotización</button>
+      </form>
 
-    <!-- RESULTADO -->
-    <div id="resultado"></div>
+      <div id="resultado"></div>
+    </div>
+  </div>
+
+  
+  <script>
+    function mostrarCotizacion() {
+      // validar que los elementos existan
+      var nombreEl = document.getElementById('nombre');
+      var correoEl = document.getElementById('correo');
+      var marcaEl = document.getElementById('marca');
+      var resultadoEl = document.getElementById('resultado');
+      var radios = document.getElementsByName('tipo');
+      var checkExtras = document.getElementsByName('extras');
+
+      if (!nombreEl || !correoEl || !marcaEl || !resultadoEl) {
+        alert('Faltan elementos en la página. Revisa los IDs: nombre, correo, marca, resultado.');
+        return;
+      }
+
+      var nombre = nombreEl.value;
+      var correo = correoEl.value;
+      var marca = marcaEl.value;
+
+      // obtener radio seleccionado
+      var tipo = '';
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          tipo = radios[i].value;
+          break;
+        }
+      }
+
+      //  recorrer checkboxes y juntar seleccionados
+      var extrasArr = [];
+      for (var j = 0; j < checkExtras.length; j++) {
+        if (checkExtras[j].checked) {
+          extrasArr.push(checkExtras[j].value);
+        }
+      }
+      var extrasText = extrasArr.length > 0 ? extrasArr.join(', ') : 'Ninguno';
+
+      // mostrar resultado
+      resultadoEl.style.display = 'block';
+      resultadoEl.innerHTML =
+        '<h3>Cotización solicitada</h3>' +
+        '<p><strong>Nombre:</strong> ' + safe(nombre) + '</p>' +
+        '<p><strong>Correo:</strong> ' + safe(correo) + '</p>' +
+        '<p><strong>Marca:</strong> ' + safe(marca) + '</p>' +
+        '<p><strong>Financiamiento:</strong> ' + safe(tipo) + '</p>' +
+        '<p><strong>Extras:</strong> ' + safe(extrasText) + '</p>' +
+        '<p>La agencia se pondrá en contacto contigo.</p>';
+    }
+
+    // función simple para reemplazar caracteres peligrosos
+    function safe(text) {
+      if (!text) return '';
+      return text.replace(/&/g, '&amp;')
+                 .replace(/</g, '&lt;')
+                 .replace(/>/g, '&gt;')
+                 .replace(/"/g, '&quot;')
+                 .replace(/'/g, '&#39;');
+    }
+  </script>
 </body>
 </html>
